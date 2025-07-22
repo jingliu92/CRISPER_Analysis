@@ -31,10 +31,10 @@ CRISPR-based approach for E. coli O157 outbreak tracing using WGS data. CRISPR t
 2. In E. coli O157:H7, CRISPR arrays are present and can vary among strains, allowing for subtyping within O157.
 
 ## Bioinformatics Analysis Pipeline
-### Genome Dataset Collection from NCBI 
+### Step1: Genome Dataset Collection from NCBI 
 To investigate the potential source attribution of clinical Escherichia coli O157 isolates, we applied a CRISPR-based approach focusing on strains within the SNP cluster PDS000181369.254, as identified through the NCBI Pathogen Detection platform. This cluster comprises 4,458 isolates, **from which we curated a subset of 108 isolates representing clinical, bovine, and produce sources. Selection was guided by phylogenetic proximity in the SNP tree; specifically, we selected isolates with minimal SNP differences (e.g., 0~50 SNPs) between clinical and environmental strains.**
 #### Download Assembly from NCBI and Data Preparation
-Accession # of WGS isolates
+**Accession # of WGS isolates**
 ```
 nano accessions.txt
 
@@ -193,4 +193,25 @@ done
 chmod +x sort_and_rename_files.sh
 ./sort_and_rename_files.sh
 ```
+
+### Step2: CRISPR Array and Cas Operon Identification
+✅ Objective: Identify and extract:
+1. **CRISPR arrays (with spacers and direct repeats)**
+2. **CRISPR leader sequences**
+3. **Cas operons (e.g., cas1, cas2, cas3, etc.)**
+4. **Subtypes of CRISPR-Cas systems in each genome**
+
+**Running CRISPRCasTyper** (https://github.com/Russel88/CRISPRCasTyper)
+```
+# Create output directory
+mkdir CRISPRCasTyper_outputs
+
+# Batch process all fna files
+for file in genomic_fna/*.fna; do
+    sample=$(basename "$file" .fna)
+    echo "Processing $sample"
+    cctyper "$file" "CRISPRCasTyper_outputs/$sample"
+done
+```
+
 
