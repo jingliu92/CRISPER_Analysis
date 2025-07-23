@@ -339,5 +339,28 @@ with open("itol_annotation.txt", "w") as f:
         f.write(f"{label}\t{color}\n")
 print("✅ iTOL annotation saved as itol_annotation.txt")
 ```
-<img width="1889" height="809" alt="image" src="https://github.com/user-attachments/assets/07a07beb-c7ca-45c5-b555-f945528c7f0b" />
+
+### Results interpretation
+
+Ny Jaccard-based NJ tree from CRISPR spacers shows only two major clusters. Many isolates from different sources (Clinical, Bovine, Produce) are grouped together. Yet the SNP-based tree shows more diversity (i.e., more distinct subclusters).
+<img width="1889" height="809" alt="image" src="https://github.com/user-attachments/assets/8cc0e3f7-a7e4-4d45-9535-d4b9e192ad66" />
+
+**What Does This Mean?**
+
+- CRISPR spacer content is highly conserved among these E. coli O157 isolates.
+- Only a few unique spacers (6 total) were found across 109 isolates.
+
+This suggests the CRISPR arrays haven't diversified much, possibly due to:
+
+- Low spacer turnover
+- Shared exposure history
+- Similar phage pressure or immunity profiles
+
+Unlike SNPs, which evolve neutrally or adaptively at fine scale, CRISPR spacers evolve mainly via phage encounters and acquisition loss. Hence, your CRISPR-based clustering shows coarser relationships — grouping strains with similar phage histories, not necessarily recent divergence.
+CRISPR doesn’t reflect recent evolutionary events as precisely as SNPs. The lack of CRISPR diversity limits its resolution to discriminate among recent outbreak strains or closely related lineages. 
+
+📌 Summary of What Your Result Indicates
+The CRISPR-based phylogeny clusters isolates with similar historical exposure to phages, but lacks the resolution to mirror fine-scale SNP-based divergence.
+This is expected, especially when the number of informative spacers is very low (6 in your case).
+
 
