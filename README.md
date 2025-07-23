@@ -37,7 +37,6 @@ To investigate the potential source attribution of clinical Escherichia coli O15
 **Accession # of WGS isolates**
 ```
 nano accessions.txt
-
 ```
 ```
 ./datasets  download genome accession --inputfile accessions.txt --include genome,cds,gff3
@@ -150,6 +149,61 @@ Not all isolates have intact or functional CRISPR-Cas systems. Some clinical iso
 - Have incomplete interference modules
 - Comparing completeness across sources tells you: Whether certain sources tend to maintain active immune systems, which could relate to phage exposure or ecological niche.
 
-
 <img width="754" height="291" alt="image" src="https://github.com/user-attachments/assets/370d212a-4dd8-4a7c-9fa1-bb8c9d6b674c" />
+
+
+**Parse Cas Operons with Metadata**
+```
+# File to use: CRISPR_Cas.tab or cas_operons.tab from each isolate’s output
+nano summarize_cas_types.py
+```
+
+```
+import os
+import pandas as pd
+
+# === File paths ===
+metadata_file = "metadata.csv"          # your file
+base_dir = "CRISPRCasTyper_outputs"     # path to output folders
+output_file = "CRISPRCas_Subtype_Summary.tsv"
+
+# === Load metadata ===
+metadata = pd.read_csv(metadata_file)
+metadata = metadata.set_index('Isolate')
+
+results = []
+
+# Loop through existing CRISPRCasTyper result folders
+for isolate_id in os.listdir(base_dir):
+    cas_file = os.path.join(base_dir, isolate_id, "cas_operons.tab")
+    
+    if not os.path.isfile(cas_file):
+        print(f"Skipping {isolate_id}: cas_operons.tab not found")
+        continue
+
+    try:
+        df = pd.read_csv(cas_file, sep='\t')
+        source = metadata.loc[isolate_id, 'Source'] if isolate_id in metadata.index else "Unknown"
+
+        for _, row in df.iterrows():
+            results.append({
+                'Isolate_ID': isolate_id,
+                'Source': source,
+                'Cas_Subtype': row.get('Best_type', 'NA'),
+                'Interference_%': row.get('Complete_Interference', 'NA'),
+                'Adaptation_%': row.get('Complete_Adaptation', 'NA')
+            })
+
+    except Exception as e:
+        print(f"Error parsing {cas_file}: {e}")
+
+# Create and export DataFrame
+summary_df = pd.DataFrame(results)
+summary_df.to_csv(output_file, sep='\t', index=False)
+
+print(f"\n✅ Summary saved to {output_file}")
+```
+```
+python summarize_cas_types.py
+```
 
