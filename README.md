@@ -363,4 +363,9 @@ CRISPR doesn’t reflect recent evolutionary events as precisely as SNPs. The la
 The CRISPR-based phylogeny clusters isolates with similar historical exposure to phages, but lacks the resolution to mirror fine-scale SNP-based divergence.
 This is expected, especially when the number of informative spacers is very low (6 in your case).
 
+## Reference
+1. Kushwaha, S.K., Bhavesh, N.L.S., Abdella, B. et al. The phylogenomics of CRISPR-Cas system and revelation of its features in Salmonella. Sci Rep 10, 21156 (2020). https://doi.org/10.1038/s41598-020-77890-6
+2. Muzyukina, P., and O. Soutourina. "CRISPR genotyping methods: tracing the evolution from spoligotyping to machine learning." Biochimie 217 (2024): 66-73. https://doi.org/10.1016/j.biochi.2023.07.017
+
+
 
