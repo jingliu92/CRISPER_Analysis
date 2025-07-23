@@ -264,5 +264,7 @@ matrix.to_csv(output_file, sep='\t')
 print(f"\n✅ Spacer matrix saved to: {output_file}")
 ```
 
+### Results interpretation
+Only 6 unique spacers were identified and Three spacers are present in almost all isolates, except 
 
-
+✅ Only 3 isolates (e.g., GCA_000747455.1) show a different pattern (presence of other spacers)
