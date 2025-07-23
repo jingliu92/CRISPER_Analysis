@@ -207,3 +207,9 @@ print(f"\n✅ Summary saved to {output_file}")
 python summarize_cas_types.py
 ```
 
+### Results interpretation
+Based on the CRISPRCas_Subtype_Summary.tsv, all isolates Cas subtypes are type I-E. This indicates: 
+**Subtype Is Not a Differentiating Feature, Because all isolates share the same Cas subtype (I-E), this feature cannot distinguish between: Clinical vs. bovine vs. produce sources**
+
+
+
