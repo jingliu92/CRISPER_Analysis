@@ -365,11 +365,12 @@ This suggests the CRISPR arrays haven't diversified much, possibly due to:
 Unlike SNPs, which evolve neutrally or adaptively at fine scale, CRISPR spacers evolve mainly via phage encounters and acquisition loss. Hence, your CRISPR-based clustering shows coarser relationships — grouping strains with similar phage histories, not necessarily recent divergence.
 CRISPR doesn’t reflect recent evolutionary events as precisely as SNPs. The lack of CRISPR diversity limits its resolution to discriminate among recent outbreak strains or closely related lineages. 
 
-📌 Summary of What Your Result Indicates
-The CRISPR-based phylogeny clusters isolates with similar historical exposure to phages, but lacks the resolution to mirror fine-scale SNP-based divergence.
-This is expected, especially when the number of informative spacers is very low (6 in your case).
+## Project Summary of CRISPR-Based Genotyping to Trace the Source of Clinical E. coli O157:H7 Isolates
+The goal of this project was to evaluate whether clinical Escherichia coli O157:H7 isolates were genetically linked to potential environmental sources—specifically bovine and produce—using a CRISPR-based approach. A total of 109 genomes, comprising isolates from clinical, bovine, and produce origins, were selected from SNP cluster PDS000181369.254 in the NCBI Pathogen Detection platform based on close genetic relatedness.
 
+CRISPR-Cas system analysis using CRISPRCasTyper revealed that all isolates harbored the same CRISPR-Cas subtype, Type I-E, indicating evolutionary conservation of CRISPR systems across sources. Spacer sequences were extracted from each genome, and a binary presence–absence matrix was constructed. Based on this matrix, a Jaccard distance-based neighbor-joining (NJ) tree was generated to assess clustering patterns among the isolates.
 
+Despite the relatively low diversity of CRISPR spacers (only six unique spacers detected), the NJ tree revealed two major clades, with clinical isolates clustering closely with both bovine and produce isolates. This finding suggests that both environmental sources may be epidemiologically linked to the clinical cases. The conserved CRISPR spacer profiles across these groups further support the hypothesis of a shared lineage or recent transmission chain.
 
 
 ## Reference
