@@ -157,7 +157,6 @@ Not all isolates have intact or functional CRISPR-Cas systems. Some clinical iso
 
 <img width="754" height="291" alt="image" src="https://github.com/user-attachments/assets/370d212a-4dd8-4a7c-9fa1-bb8c9d6b674c" />
 
-
 **Parse Cas Operons with Metadata**
 ```
 # File to use: CRISPR_Cas.tab or cas_operons.tab from each isolate’s output
@@ -350,6 +349,7 @@ print("✅ iTOL annotation saved as itol_annotation.txt")
 
 Ny Jaccard-based NJ tree from CRISPR spacers shows only two major clusters. Many isolates from different sources (Clinical, Bovine, Produce) are grouped together. Yet the SNP-based tree shows more diversity (i.e., more distinct subclusters).
 <img width="1889" height="809" alt="image" src="https://github.com/user-attachments/assets/8cc0e3f7-a7e4-4d45-9535-d4b9e192ad66" />
+**Figure 1**: Neighbor-joining tree based on Jaccard distances computed from CRISPR spacer presence-absence profiles across 109 E. coli O157:H7 isolates with Type I‑E CRISPR‑Cas systems. Two major clades were observed, with clinical isolates (red) interspersed among bovine (blue) and produce (green) isolates, indicating strong genetic similarity across sources. Tip colors correspond to isolate origin.
 
 **What Does This Mean?**
 
