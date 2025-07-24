@@ -33,6 +33,12 @@ CRISPR-based approach for E. coli O157 outbreak tracing using WGS data. CRISPR t
 ## Bioinformatics Analysis Pipeline
 ### Step1: Genome Dataset Collection from NCBI 
 To investigate the potential source attribution of clinical Escherichia coli O157 isolates, we applied a CRISPR-based approach focusing on strains within the SNP cluster PDS000181369.254, as identified through the NCBI Pathogen Detection platform. This cluster comprises 4,458 isolates, **from which we curated a subset of 108 isolates representing clinical, bovine, and produce sources. Selection was guided by phylogenetic proximity in the SNP tree; specifically, we selected isolates with minimal SNP differences (e.g., 0~50 SNPs) between clinical and environmental strains.**
+<img width="1374" height="677" alt="image" src="https://github.com/user-attachments/assets/c0ef362f-31aa-4d0c-bdeb-42ab65f86b1d" />
+<img width="1379" height="761" alt="image" src="https://github.com/user-attachments/assets/b82c7a5f-3773-46bd-a648-ace40ed767ac" />
+<img width="1364" height="744" alt="image" src="https://github.com/user-attachments/assets/72d97e8c-d0ca-4541-b126-b31b4b7e60ac" />
+<img width="1394" height="748" alt="image" src="https://github.com/user-attachments/assets/8e9ac577-d3eb-4459-9eab-403223b4fb2e" />
+
+
 #### Download Assembly from NCBI and Data Preparation
 **Accession # of WGS isolates**
 ```
@@ -362,6 +368,9 @@ CRISPR doesn’t reflect recent evolutionary events as precisely as SNPs. The la
 📌 Summary of What Your Result Indicates
 The CRISPR-based phylogeny clusters isolates with similar historical exposure to phages, but lacks the resolution to mirror fine-scale SNP-based divergence.
 This is expected, especially when the number of informative spacers is very low (6 in your case).
+
+
+
 
 ## Reference
 1. Kushwaha, S.K., Bhavesh, N.L.S., Abdella, B. et al. The phylogenomics of CRISPR-Cas system and revelation of its features in Salmonella. Sci Rep 10, 21156 (2020). https://doi.org/10.1038/s41598-020-77890-6
