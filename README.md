@@ -208,7 +208,7 @@ python summarize_cas_types.py
 ```
 
 ### Results interpretation
-Based on the CRISPRCas_Subtype_Summary.tsv, all isolates Cas subtypes are type I-E. This indicates: 
+Based on the **CRISPRCas_Subtype_Summary.tsv**, all isolates Cas subtypes are type I-E. This indicates: 
 **Subtype Is Not a Differentiating Feature, Because all isolates share the same Cas subtype (I-E), this feature cannot distinguish between: Clinical vs. bovine vs. produce sources**
 
 ## Analyzing and Comparing Spacer Profiles Across Your E. coli O157 Isolates
@@ -265,7 +265,7 @@ print(f"\n✅ Spacer matrix saved to: {output_file}")
 ```
 
 ### Results interpretation
-Only 6 unique spacers were identified and Three spacers are present in almost all isolates, except GCA_000747455.1 (cattle), GCA_021166015.1 (Packaged lettuce) and GCA_021184125.1 (clinical) show a different pattern (presence of other spacers).
+Based on **spacer_presence_absence_matrix.tsv**, only 6 unique spacers were identified and Three spacers are present in almost all isolates, except GCA_000747455.1 (cattle), GCA_021166015.1 (Packaged lettuce) and GCA_021184125.1 (clinical) show a different pattern (presence of other spacers).
 only 6 spacers were extracted. This could indicate: **Highly clonal population (e.g., same CRISPR array in all strains)** Or CRISPR arrays are truncated or low-quality in most genomes.
 
 ## Build Phylogenetic Tree
